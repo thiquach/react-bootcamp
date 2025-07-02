@@ -1,15 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-var fname = "Amy";
-var lname = "Q";
+var date = new Date();
+var fname = "Amy Q";
 
 ReactDOM.render(
   <div>
-    <h1>
-      Hello {fname} {lname}
-    </h1>
-    <p>My lucky number is {Math.floor(Math.random() * 10)}</p>
+    <h1>Created by: {fname}</h1>
+    <p>Copyright: {date.getFullYear()}</p>
   </div>,
   document.getElementById("root")
 );
