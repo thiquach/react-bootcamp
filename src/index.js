@@ -11,13 +11,13 @@ const customStyle = {
 
 if (hours < 12) {
   greeting = "Good Morning";
-  customStyle.color = "red";
-} else if (hours > 12 && hours < 18) {
+  customStyle.color = "green";
+} else if (hours < 18) {
   greeting = "Good Afternoon";
   customStyle.color = "blue";
 } else {
   greeting = "Good Evening";
-  customStyle.color = "green";
+  customStyle.color = "red";
 }
 
 ReactDOM.render(
@@ -25,7 +25,6 @@ ReactDOM.render(
     <h1 className="heading" style={customStyle}>
       {greeting}
     </h1>
-    <p>Practice styling</p>
   </div>,
   document.getElementById("root")
 );
