@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import PI, { doublePi, triplePi } from "./math.js";
+import * as Calculator from "./calculator.js";
 
 ReactDOM.render(
   <ul>
-    <li>{PI}</li>
-    <li>{doublePi()}</li>
-    <li>{triplePi()}</li>
+    <li>{Calculator.add(1, 2)}</li>
+    <li>{Calculator.multiply(2, 3)}</li>
+    <li>{Calculator.subtract(7, 2)}</li>
+    <li>{Calculator.divide(5, 2)}</li>
   </ul>,
   document.getElementById("root")
 );
