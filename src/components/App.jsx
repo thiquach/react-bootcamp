@@ -1,38 +1,48 @@
 import React, { useState } from "react";
 
 function App() {
-  const [fname, setFname] = useState("");
-  const [lname, setLname] = useState("");
+  const [fullName, setFullName] = useState({
+    fName: "",
+    lName: "",
+  });
 
-  function handleFname(event) {
-    const newFname = event.target.value;
+  function handleChange(event) {
+    const { value, name } = event.target;
 
-    setFname(newFname);
-  }
-
-  function handleLname(event) {
-    const newLname = event.target.value;
-
-    setLname(newLname);
+    // no directly reference event.target in setFullName()
+    // as it is syntheticEvent
+    setFullName((prevValue) => {
+      if (name === "fName") {
+        return {
+          fName: value,
+          lName: prevValue.lName,
+        };
+      } else if (name == "lName") {
+        return {
+          fName: prevValue.fName,
+          lName: value,
+        };
+      }
+    });
   }
 
   return (
     <div className="container">
       <h1>
-        Hello {fname} {lname}
+        Hello {fullName.fName} {fullName.lName}
       </h1>
       <form>
         <input
-          onChange={handleFname}
+          onChange={handleChange}
           name="fName"
           placeholder="First Name"
-          value={fname}
+          value={fullName.fName}
         />
         <input
-          onChange={handleLname}
+          onChange={handleChange}
           name="lName"
           placeholder="Last Name"
-          value={lname}
+          value={fullName.lName}
         />
         <button>Submit</button>
       </form>
