@@ -9,9 +9,9 @@ function App() {
     setInputText(newValue);
   }
 
-  function addItems() {
-    setItems((prevItem) => {
-      return [...prevItem, inputText];
+  function addItem() {
+    setItems(prevItems => {
+      return [...prevItems, inputText];
     });
     setInputText("");
   }
@@ -23,17 +23,15 @@ function App() {
       </div>
       <div className="form">
         <input onChange={handleChange} type="text" value={inputText} />
-        <button onClick={addItems}>
+        <button onClick={addItem}>
           <span>Add</span>
         </button>
       </div>
       <div>
         <ul>
-          <li>
-            {items.map((todoItem) => (
-              <li>{todoItem}</li>
-            ))}
-          </li>
+          {items.map(todoItem => (
+            <li>{todoItem}</li>
+          ))}
         </ul>
       </div>
     </div>
