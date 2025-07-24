@@ -1,0 +1,16 @@
+{
+  "name": "3.2-http-requests",
+  "version": "1.0.0",
+  "description": "learning about http",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Amy Quach",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
